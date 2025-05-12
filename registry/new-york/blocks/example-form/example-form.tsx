@@ -8,11 +8,11 @@ import {
   CardDescription,
   CardContent,
   CardFooter,
-} from "@/components/ui/card"
-import { Input } from "@/components/ui/input"
-import { Label } from "@/components/ui/label"
-import { Button } from "@/components/ui/button"
-import { Textarea } from "@/components/ui/textarea"
+} from "@/registry/new-york/ui/card"
+import { Input } from "@/registry/new-york/ui/input"
+import { Label } from "@/registry/new-york/ui/label"
+import { Button } from "@/registry/new-york/ui/button"
+import { Textarea } from "@/registry/new-york/ui/textarea"
 import { z } from "zod"
 
 const exampleFormSchema = z.object({
@@ -65,14 +65,14 @@ export function ExampleForm() {
   )
 
   return (
-    <Card className="w-full max-w-sm">
-      <CardHeader>
-        <CardTitle>How can we help?</CardTitle>
-        <CardDescription>
-          Need help with your project? We&apos;re here to assist you.
-        </CardDescription>
-      </CardHeader>
-      <form onSubmit={handleSubmit}>
+    <form onSubmit={handleSubmit} className="w-full max-w-sm">
+      <Card>
+        <CardHeader>
+          <CardTitle>How can we help?</CardTitle>
+          <CardDescription>
+            Need help with your project? We&apos;re here to assist you.
+          </CardDescription>
+        </CardHeader>
         <CardContent className="flex flex-col gap-6">
           <div
             className="group/field grid gap-2"
@@ -158,7 +158,7 @@ export function ExampleForm() {
             {pending ? "Sending..." : "Send Message"}
           </Button>
         </CardFooter>
-      </form>
-    </Card>
+      </Card>
+    </form>
   )
 }
